@@ -7,9 +7,7 @@ import { connect } from 'react-redux'
 class BookList extends React.Component {
 
   componentDidMount(){
-    fetch('http://localhost:8080/books')
-    .then(r => r.json())
-    .then(books => this.props.dispatchSetBooks(books))
+   this.props.dispatchSetBooks()
   }
 
  render(){
@@ -37,7 +35,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
  return {
-   dispatchSetBooks: (books) => dispatch(setBooks(books))
+   dispatchSetBooks: () => dispatch(setBooks())
  }
 }
 

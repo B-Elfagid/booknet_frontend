@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 
 class BookList extends React.Component {
+  
 
   componentDidMount(){
    this.props.dispatchSetBooks()
@@ -17,8 +18,11 @@ class BookList extends React.Component {
            <Link to='/'> Home </Link> <br/>
            <Link to='/addbook'> Add Book </Link>
 
-          <div>
-            {this.props.books.map(b => <p key={b.id}>title: {b.title} author: {b.author} description: {b.description}</p>)}
+            <div >
+              <ul className="container">
+               {this.props.books.map(b => <li className="card" key={b.id}> <img src={`b.image.url`} /> Title: {b.title} Author: {b.author} Description: {b.description}</li>)}
+             </ul>
+            
           </div>
   
      </div>

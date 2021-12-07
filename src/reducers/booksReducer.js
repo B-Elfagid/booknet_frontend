@@ -7,9 +7,17 @@ export default function booksReducer(state = {
         ...state, 
         books: action.payload
       };
+
+      case "ADD_BOOK":
+        return {
+          ...state,
+          books: [...state.books, action.payload]
+        }
       
       default:
           return state;
   }
+
+   
 
 }

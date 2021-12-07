@@ -16,6 +16,12 @@ export default class BookForm extends React.Component {
         })
       }
 
+      handleSubmit = (e) => {
+        e.preventDefault()
+      
+
+      }
+
     render(){
         return(
             <div className="book-container" >
@@ -24,7 +30,7 @@ export default class BookForm extends React.Component {
                 </div>
                 <br/>
                 <h3> Add Book </h3>
-                <form className="book-form">
+                <form className="book-form" onSubmit={this.handleSubmit}>
                    
                      <lable htmlFor="title-input">Title:</lable>
                       <input name="title" id="title-input" type="text" value={this.state.title} onChange={this.handleChange} /><br/>

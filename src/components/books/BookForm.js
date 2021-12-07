@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { addBook } from '../../components/books/BookForm'
+import { connect } from 'react-redux'
+
 
 export default class BookForm extends React.Component {
 
@@ -18,6 +21,16 @@ export default class BookForm extends React.Component {
 
       handleSubmit = (e) => {
         e.preventDefault()
+        
+
+
+
+        this.setState({
+            title:"",
+            author:"",
+            description:"",
+            image:""
+        })
       
 
       }

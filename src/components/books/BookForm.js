@@ -21,9 +21,7 @@ class BookForm extends React.Component {
 
       handleSubmit = (e) => {
         e.preventDefault()
-        
-
-
+        this.props.dispatchAddBook(this.state)
 
         this.setState({
             title:"",
@@ -37,7 +35,6 @@ class BookForm extends React.Component {
         return(
             <div className="book-container" >
                  <div>
-                   <NavLink to='/'> Home </NavLink>
                 </div>
                 <br/>
                 <h3> Add Book </h3>

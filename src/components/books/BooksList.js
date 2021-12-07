@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { setBooks } from '../../actions/booksAction';
+import BookForm from '../../components/books/BookForm'
+import CategoryList from '../../components/categories/CategoryList'
 import { connect } from 'react-redux'
 
 
@@ -14,6 +16,9 @@ class BookList extends React.Component {
  render(){
   return(
       <div>
+          <CategoryList />
+         <BookForm addBook={this.props.addBook}/>
+         
           <h1> Book List </h1>
            <Link to='/'> Home </Link> <br/>
            <Link to='/addbook'> Add Book </Link>

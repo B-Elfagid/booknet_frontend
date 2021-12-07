@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { addBook } from '../../components/books/BookForm'
+import { addBook } from '../../actions/booksAction.js'
 import { connect } from 'react-redux'
 
 
-export default class BookForm extends React.Component {
+class BookForm extends React.Component {
 
   state = {
            title:"",
@@ -31,8 +31,6 @@ export default class BookForm extends React.Component {
             description:"",
             image:""
         })
-      
-
       }
 
     render(){
@@ -63,3 +61,12 @@ export default class BookForm extends React.Component {
     }
 
 }
+
+function mapDispatchToProps(dispatch){
+    return {
+        dispatchAddBook: (book) => dispatch(addBook(book))
+    }
+
+}
+
+export default connect(null, mapDispatchToProps)(BookForm)

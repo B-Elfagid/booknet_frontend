@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 import { addBook } from '../../actions/booksAction.js'
 import { connect } from 'react-redux'
 
@@ -10,7 +11,10 @@ class BookForm extends React.Component {
            title:"",
            author:"",
            description:"",
-           image:""
+           image:"",
+           category:""
+           
+           
        }
 
        handleChange = (e) => {
@@ -27,16 +31,16 @@ class BookForm extends React.Component {
             title:"",
             author:"",
             description:"",
-            image:""
+            image:"",
+            category:""
         })
       }
 
     render(){
         return(
             <div className="book-container" >
-                 <div>
-                </div>
-                <br/>
+                 <Link to='/'> Home </Link> <br/>
+               
                 <h3> Add Book </h3>
                 <form className="book-form" onSubmit={this.handleSubmit}>
                    
@@ -46,10 +50,19 @@ class BookForm extends React.Component {
                       <input name="author" id="author-input" type="text" value={this.state.author} onChange={this.handleChange} /><br/>
                      <lable htmlFor="description-input">Description:</lable>
                       <input name="description" id="description-input" type="textarea" value={this.state.description} onChange={this.handleChange} /><br/>
+                      <lable htmlFor="category-input">Category:</lable>
+                      <input name="category" id="category-input" type="text" value={this.state.category} onChange={this.handleChange} /> <br/>
                       <lable htmlFor="image-input">Upload Image:</lable>
-                      <input name="image" id="image-input" type="file" onChange={this.handleChang} /> <br/>
+                      <input name="image" id="image-input" type="file" value={this.state.image} onChange={this.handleChange} /> <br/>
+
+
+                      
+
                      <button type="submit">Submit</button>
-                     {this.state.title}
+                   
+
+          
+
                 </form>
 
                 

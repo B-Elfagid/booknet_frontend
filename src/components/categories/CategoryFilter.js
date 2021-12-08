@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class CategoryList extends React.Component {
+export default class CategoryFilter extends React.Component {
 
     state = {
         books:[],

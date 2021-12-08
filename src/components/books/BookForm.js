@@ -40,6 +40,7 @@ class BookForm extends React.Component {
         return(
             <div className="book-container" >
                  <Link to='/'> Home </Link> <br/>
+                 <Link to='/books'> Books List </Link> <br/>
                
                 <h3> Add Book </h3>
                 <form className="book-form" onSubmit={this.handleSubmit}>

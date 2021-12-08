@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { setBooks } from '../../actions/booksAction';
-
+import BooksCard from '../../components/books/BooksCard';
 import CategoryFilter from '../categories/CategoryFilter';
 import { connect } from 'react-redux'
 
@@ -25,7 +25,7 @@ class BookList extends React.Component {
 
             <div >
               <ul className="container">
-               {this.props.books.map(b => <li className="card" key={b.id}> <img src={`b.image.url`} /> Title: {b.title} Author: {b.author} Description: {b.description}</li>)}
+               {this.props.books.map(book => <BooksCard key={book.id} book={book} />)}
              </ul>
             
           </div>

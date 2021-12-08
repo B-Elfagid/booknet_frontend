@@ -23,11 +23,10 @@ class BookList extends React.Component {
            <Link to='/'> Home </Link> <br/>
            <Link to='/addbook'> Add Book </Link>
 
-            <div >
-              <ul className="container">
+            <div>
+              
                {this.props.books.map(book => <BooksCard key={book.id} book={book} />)}
-             </ul>
-            
+          
           </div>
   
      </div>

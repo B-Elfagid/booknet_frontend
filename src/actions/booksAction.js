@@ -23,6 +23,16 @@ export const addBook = (book) => {
    }
 }
 
+export const deleteBook = (id) => {
+  return (dispatch) => {
+   fetch(`http://localhost:8080/books/${id}`, {
+      method: "DELETE"
+   })
+   .then(r => r.json())
+   .then(id => dispatch({type: "DELETE_BOOK", payload: id}))
+  }
+}
+
 
 
 

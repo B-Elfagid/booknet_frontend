@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { deleteBook } from '../../actions/booksAction';
+import { connect } from 'react-redux'
 
-const BookCard = (props) => {
+ function BookCard(props) {
+
+    function handleDelete() {
+      props.dispatchdeleteBook(props.book.id)
+    }
     return (
         <div className="container">
             <div className="card"> 
@@ -11,8 +17,8 @@ const BookCard = (props) => {
             {props.book.category} <br/>
             {props.book.description}
             <div>
-            <Link clasName="link-success" to={`/books/${props.book.id}` } >Go To Review</Link>
-           
+            <Link clasName="link-success" to={`/books/${props.book.id}` } >Go To Review</Link><br/>
+             <button onClick={handleDelete} >X</button>
             </div>
             </div>   
             
@@ -20,4 +26,13 @@ const BookCard = (props) => {
     )
 }
 
-export default BookCard;
+
+  
+  
+  function mapDispatchToProps(dispatch) {
+   return {
+     dispatchdeleteBook: (bookId) => dispatch(deleteBook(bookId))
+   }
+  }
+
+export default connect(null, mapDispatchToProps)(BookCard)

@@ -11,7 +11,8 @@ const BookCard = (props) => {
             {props.book.category} <br/>
             {props.book.description}
             <div>
-            <Link to={`/books/${props.book.id}`}>Go To Review</Link>
+            <Link clasName="link-success" to={`/books/${props.book.id}` } >Go To Review</Link>
+           
             </div>
             </div>   
             

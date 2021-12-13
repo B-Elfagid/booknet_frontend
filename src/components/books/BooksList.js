@@ -26,7 +26,6 @@ class BookList extends React.Component {
             <div>
               
                {this.props.books.map(book => <BooksCard key={book.id} book={book} />)}
-          
           </div>
   
      </div>

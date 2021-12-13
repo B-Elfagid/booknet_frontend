@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { deleteBook } from '../../actions/booksAction';
 import { connect } from 'react-redux'
 
+
  function BookCard(props) {
 
     function handleDelete() {
@@ -17,11 +18,11 @@ import { connect } from 'react-redux'
             {props.book.category} <br/>
             {props.book.description}
             <div>
-            <Link clasName="link-success" to={`/books/${props.book.id}` } >Go To Review</Link><br/>
+            <Link clasName="link-success" to={`/books/${props.book.id}/reviews` } >Go To Review</Link><br/>
              <button onClick={handleDelete} >X</button>
             </div>
             </div>   
-            
+             
         </div>
     )
 }

@@ -1,23 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setReviews } from '../../actions/reviewsAction';
+import ReviewForm from '../../components/reviews/ReviewForm';
 
 class ReviewsList extends React.Component {
 
 
      componentDidMount(){
-        this.props.dispatchSetReviews()
+        this.props.dispatchSetReviews(parseInt(window.location.href.split('/')[4],10))
        }
-
+    
      render(){
+      
         return(
             <div>
                 <h1>Comments</h1>
                 <ul>
-                {/* {this.props.reviews.map(rev => <li>{rev.comment}</li>)} */}
+                {this.props.reviews.reviews.map(rev => <li key={rev.id}>{rev.comment}</li>)}
                 </ul>
+                <div>
+                    <ReviewForm />
+                </div>
             </div>
-            
+
         )
     }
 
@@ -31,7 +36,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-     dispatchSetReviews: () => dispatch(setReviews())
+     dispatchSetReviews: (book_id) => setReviews(book_id)(dispatch)
     }
 }
 

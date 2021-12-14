@@ -1,12 +1,30 @@
-  export const setReviews = (bookId) => {
+  export const setReviews = (book_id) => {
     return(dispatch) => {
-      fetch(`http://localhost:8080/books/${bookId}/reviews`)
+      fetch(`http://localhost:8080/books/${book_id}/reviews`)
       .then(res => res.json())
       // .then(json => {
-      //   // console.log(json)
+      //   debugger
+      //   console.log(json)
       //   return json
       // })
       .then(reviews => dispatch({type: "SET_REVIEWS", payload: reviews}))
       
     }
   }
+
+  export const addReview = (id) => {
+   
+    return (dispatch) => {
+      fetch(`http://localhost:8080/books/${id}/reviews`, {
+          method: "POST",
+          headers: {
+             "Content-Type": "application/json",
+             "Accept": "application/json"
+          },
+          body: JSON.stringify()
+       })
+       .then(r => r.json())
+       .then(review => dispatch({type: "ADD_REVIEW", payload: review}))
+    }
+ }
+ 

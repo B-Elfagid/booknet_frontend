@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { deleteBook } from '../../actions/booksAction';
 import { connect } from 'react-redux'
+import Like from './Like';
 
 
  function BookCard(props) {
@@ -19,7 +20,9 @@ import { connect } from 'react-redux'
             {props.book.description}
             <div>
             <Link clasName="link-success" to={`/books/${props.book.id}/reviews` } >Go To Review</Link><br/>
+           
              <button onClick={handleDelete} >X</button>
+              <Like />
             </div>
             </div>   
              

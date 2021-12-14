@@ -13,7 +13,7 @@
   }
 
   export const addReview = (id) => {
-   
+  console.log(id)
     return (dispatch) => {
       fetch(`http://localhost:8080/books/${id}/reviews`, {
           method: "POST",
@@ -24,7 +24,7 @@
           body: JSON.stringify()
        })
        .then(r => r.json())
-       .then(review => dispatch({type: "ADD_REVIEW", payload: review}))
+       .then(review => console.log(review))
     }
  }
  

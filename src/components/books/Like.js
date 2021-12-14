@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default class Like extends React.Component {
+
+ export default class Like extends React.Component {
   state = {
       likes: 0
   }
@@ -15,8 +16,10 @@ export default class Like extends React.Component {
   render(){
       return(
           <div>
-           <p>{this.state.likes}</p> 
-           <button onClick={this.increaseLikes}>Likes</button>
+            
+           <button onClick={this.increaseLikes}>&hearts;</button>
+           {/* <p>{this.state.likes} Likes</p> */}
+           <p>{this.state.likes ? this.state.likes : 0} {this.state.likes === 1 ? `Like` : `Likes`}</p>
           </div>
       )
 

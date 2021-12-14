@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 class ReviewForm extends React.Component {
    state = {
-       comment:""
+       comment: ""
    }
 
    handleChange = (e) => {

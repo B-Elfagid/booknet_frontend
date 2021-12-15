@@ -14,8 +14,8 @@ class ReviewForm extends React.Component {
    }
 
    handleSubmit = (e) => {
-       e.preventDefault()
-      this.props.dispatchAddReview(this.state)
+       e.preventDefault()  
+      this.props.dispatchAddReview(e.target.action, this.state)
 
        this.setState({
        comment: ""
@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
 
 function mapDispatchToProps(dispatch){
     return {
-        dispatchAddReview: (review) => dispatch(addReview(review))
+        dispatchAddReview: (id, review) => dispatch(addReview(id, review))
     }
 
 }

@@ -19,6 +19,7 @@ class ReviewsList extends React.Component {
                 <h1>Comments</h1>
                 <ul>
                 {this.props.reviews.reviews.map(rev => <li key={rev.id}>{rev.comment}</li>)}
+                
                 </ul>
                 <div>
                    

@@ -11,7 +11,6 @@ class ReviewsList extends React.Component {
        }
     
      render(){
-      
         return(
             <div>
                  <ReviewForm />

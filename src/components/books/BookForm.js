@@ -32,7 +32,6 @@ class BookForm extends React.Component {
             author:"",
             description:"",
             image:"",
-            category:""
         })
       }
 
@@ -51,8 +50,6 @@ class BookForm extends React.Component {
                       <input name="author" id="author-input" type="text" value={this.state.author} onChange={this.handleChange} /><br/>
                      <label htmlFor="description-input">Description:</label>
                       <input name="description" id="description-input" type="textarea" value={this.state.description} onChange={this.handleChange} /><br/>
-                      <label htmlFor="category-input">Category:</label>
-                      <input name="category" id="category-input" type="text" value={this.state.category} onChange={this.handleChange} /> <br/>
                       <label htmlFor="image-input">Upload Image:</label>
                       <input name="image" id="image-input" type="file" value={this.state.image} onChange={this.handleChange} /> <br/>
 

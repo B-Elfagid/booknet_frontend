@@ -13,16 +13,17 @@ import Like from './Like';
     return (
         <div className="container">
             <div className="card"> 
-            <img src={props.book.image} /><br/>
+            <img src={props.book.image} alt="book image" /><br/>
             {props.book.title} <br/>
             {props.book.author} <br/>
             {props.book.category} <br/>
-            {props.book.description}
-            <div>
-            <Link clasName="link-success" to={`/books/${props.book.id}/reviews` } >Go To Review</Link><br/>
-           
-             <button onClick={handleDelete} >X</button>
-              <Like />
+            {props.book.description}<br/>
+            <p>{props.book.likes}</p>
+            <button className="like-btn">Like &hearts;</button>
+            <div className="bottom-card">
+              <Like /> 
+               <Link clasName="link-success" to={`/books/${props.book.id}/reviews` } >Go To Review</Link><br/>
+               <div><button onClick={handleDelete} >X</button></div>
             </div>
             </div>   
              

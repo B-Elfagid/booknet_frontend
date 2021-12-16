@@ -12,18 +12,26 @@
     }
   }
 
-  export const addReview = (id) => {
-    return (dispatch) => {
-      fetch(`http://localhost:8080/books/${id}`, {
-          method: "POST",
-          headers: {
-             "Content-Type": "application/json",
-             "Accept": "application/json"
-          },
-          body: JSON.stringify()
-       })
-       .then(r => r.json())
-       .then(reviews => dispatch({type: "ADD_REVIEWS", payload: reviews}))
-    }
- }
+
+
+
+
+export const addReview = (action, comment) => {
+  const bookId = action.split("/")[4]
+  const reviewData = {review:{comment:comment.comment, book_id:bookId}}
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(reviewData)
+    
+};
+
+return(dispatch) => {
+fetch(`http://localhost:8080/books/${bookId}/reviews`, requestOptions)
+    .then(response => response.json())
+    .then(comment => dispatch({type: "ADD_REVIEWS", payload: comment}))
+
+}
+}
+
  

@@ -3,7 +3,7 @@ import React from 'react';
 import { setBooks } from '../../actions/booksAction';
 import BooksCard from '../../components/books/BooksCard';
 import { connect } from 'react-redux'
-
+import BookSearch from  '../../components/books/BookSearch';
 
 class BookList extends React.Component {
   
@@ -16,7 +16,7 @@ class BookList extends React.Component {
   return(
       <div>
         
-         
+         <BookSearch books={this.props.books}/>
          
           <h1> Book List </h1>
            <Link to='/'> Home </Link> <br/>

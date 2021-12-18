@@ -7,7 +7,7 @@ import { incrementLikes } from '../../actions/likeAction';
 function Like(props) {
   const handleClick = () => {
    
-   props.dispatchIncrementLikes(props.likes + 1, props.book_id)
+   props.dispatchIncrementLikes(props.likes, props.book_id)
   };
   
     return(

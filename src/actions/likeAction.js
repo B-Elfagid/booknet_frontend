@@ -9,7 +9,7 @@ export const incrementLikes = (likes, book_id) => {
          "Accept": "application/json"
       },
       body: JSON.stringify({book:{
-         likes: likes
+         likes: likes + 1
       }})
    })
    .then(r => r.json())

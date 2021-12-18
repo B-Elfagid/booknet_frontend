@@ -2,8 +2,8 @@
     switch(action.type) {
         case "INCREMENT_LIKES":
          return {
-           ...state,
-           likes: [...state + 1, action.payload]
+  
+           likes: state.likes + 1
          };
  
  

@@ -1,113 +1,36 @@
+
+
 import React from 'react';
+import { connect } from 'react-redux'
+import { incrementLikes } from '../../actions/likeAction';
 
-
-class Like extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      likes: 0
-    }
-  }
-
- handleClick = () => {
- this.setState({
-   likes: this.state.likes + 1
- })
-    
- }
-  render(){
-    debugger
+function Like(props) {
+  const handleClick = () => {
+   
+   props.dispatchIncrementLikes(props.likes + 1, props.book_id)
+  };
+  
     return(
-      <div>  
-       <button onClick={this.handleClick}> &hearts;</button>   
-         {/* <button onClick={increaseLikes}>&hearts;</button> */}
-         <p>{this.state.likes} Likes</p>
-         {/* <p>{this.likes ? this.likes : 0} {this.likes === 1 ? `Like` : `Likes`}</p> */}
-</div>
+    <div>  
+      {/* {props.books.likes} */}
+      <button onClick={handleClick}> &hearts;</button>   
+        {/* <p>{props.state.likes} Likes</p> */}
+       <p>{props.likes ? props.likes : 0} {props.likes === 1 ? `Like` : `Likes`}</p>
+     </div>
     )
   }
-}
 
-export default Like;
-
-
-
-
-
-
-
-
-
-// import { connect } from 'react-redux'
-// import { incrementLikes } from '../../actions/likeAction';
-
-// class Like extends React.Component {
-
-//   handleClick(){
-//    this.dispatchIncrementLikes(this.state)
-//   }
-
-//   render(){
-   
-//     return(
-//     <div>  
-//       <button onClick={this.handleClick}> &hearts;</button>   
-//         {/* <button onClick={increaseLikes}>&hearts;</button> */}
-//         {/* <p>{this.state.likes} Likes</p> */}
-//        <p>{this.likes ? this.likes : 0} {this.likes === 1 ? `Like` : `Likes`}</p>
-//      </div>
-//     )
-//   }
-// }
 
  
-// function mapStateToProps(state){
-//   return {
-//      likes: state.likes
-//   }
-// }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     dispatchIncrementLikes: (book_id) => dispatch(incrementLikes(book_id))
-//   }
-//  }
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatchIncrementLikes: (likes, book_id) => dispatch(incrementLikes(likes, book_id))
+  }
+ }
 
-// export default connect(mapStateToProps, mapDispatchToProps) (Like);
+export default connect(null, mapDispatchToProps)(Like);
 
 
-
-
-
-
-
-
-
-
-// //  export default class Like extends React.Component {
-// //   state = {
-// //       likes: 0
-// //   }
-
-// //   increaseLikes = () => {
-// //     this.setState({
-// //         likes: this.state.likes + 1
-// //     })
-    
-// //   }
-
-// //   render(){
-// //       return(
-// //           <div>
-            
-// //            <button onClick={this.increaseLikes}>&hearts;</button>
-// //            {/* <p>{this.state.likes} Likes</p> */}
-// //            <p>{this.state.likes ? this.state.likes : 0} {this.state.likes === 1 ? `Like` : `Likes`}</p>
-// //           </div>
-// //       )
-
-// //   }
-
-// // }
 
 

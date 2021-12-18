@@ -1,3 +1,5 @@
+
+
 export default function booksReducer(state = { 
    books: []
   }, action) {
@@ -21,7 +23,18 @@ export default function booksReducer(state = {
          ...state,
          books: newBooks
        }
-           
+       
+      //  case "EDIT_BOOK":
+
+      //  const bookIndex = state.books.findIndex(b => b.id === action.payload.id)
+      //    return{
+      //      ...state, 
+      //      books: [
+      //        ...state.books.slice(0, bookIndex),
+      //        action.payload,
+      //        ...state.books.slice(bookIndex + 1)
+      //      ]
+      //    }
 
 
       default:

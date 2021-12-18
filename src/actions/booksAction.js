@@ -34,6 +34,20 @@ export const deleteBook = (id) => {
 }
 
 
+// export const editBook = (book) => {
+//    return(dispatch) => {
+//       fetch(`http://localhost:8080/books/${book.id}`, {
+//        method: "PATCH",
+//        headers: {
+//          "Content-Type": "application/json",
+//          "Accept": "application/json"
+//       },
+//         body: JSON.stringify({likes: book.likes + 1})
+//       })
+//       .then(r => r.json())
+//       .then(b => dispatch({type: "EDIT_BOOK", payload: b}))
+//    }
+// }
 
 
 

@@ -38,8 +38,6 @@ class BookForm extends React.Component {
     render(){
         return(
             <div className="book-container" >
-                 <Link to='/'> Home </Link> <br/>
-                 <Link to='/books'> Books List </Link> <br/>
                
                 <h3> Add Book </h3>
                 <form className="book-form" onSubmit={this.handleSubmit}>
@@ -50,8 +48,8 @@ class BookForm extends React.Component {
                       <input name="author" id="author-input" type="text" value={this.state.author} onChange={this.handleChange} /><br/>
                      <label htmlFor="description-input">Description:</label>
                       <input name="description" id="description-input" type="textarea" value={this.state.description} onChange={this.handleChange} /><br/>
-                      <label htmlFor="image-input">Upload Image:</label>
-                      <input name="image" id="image-input" type="file" value={this.state.image} onChange={this.handleChange} /> <br/>
+                      <label htmlFor="image-input">Image-Url:</label>
+                      <input name="image" id="image-input" type="text" value={this.state.image} onChange={this.handleChange} /> <br/>
 
 
                       

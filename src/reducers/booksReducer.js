@@ -1,7 +1,7 @@
 
 
 export default function booksReducer(state = { 
-   books: []
+   books: [],  
   }, action) {
   switch(action.type) {
     case "SET_BOOKS":
@@ -24,17 +24,16 @@ export default function booksReducer(state = {
          books: newBooks
        }
        
-      //  case "EDIT_BOOK":
-
-      //  const bookIndex = state.books.findIndex(b => b.id === action.payload.id)
-      //    return{
-      //      ...state, 
-      //      books: [
-      //        ...state.books.slice(0, bookIndex),
-      //        action.payload,
-      //        ...state.books.slice(bookIndex + 1)
-      //      ]
-      //    }
+       case "INCREMENT_BOOKLIKES":
+       const bookIndex = state.books.findIndex(b => b.id === action.payload.id)
+         return{
+           ...state, 
+           books: [
+             ...state.books.slice(0, bookIndex),
+             action.payload,
+             ...state.books.slice(bookIndex + 1)
+           ]
+         }
 
 
       default:

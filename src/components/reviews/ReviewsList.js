@@ -11,6 +11,8 @@ class ReviewsList extends React.Component {
        }
     
      render(){
+         console.log(this.props)
+         
         return(
             <div>
                  <ReviewForm />
@@ -38,7 +40,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-     dispatchSetReviews: (book_id) => setReviews(book_id)(dispatch)
+    //  dispatchSetReviews: (book_id) => setReviews(book_id)(dispatch)
+    dispatchSetReviews: (book_id) => dispatch(setReviews(book_id))
     }
 }
 

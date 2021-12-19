@@ -20,8 +20,6 @@ class BookList extends React.Component {
          <BookSearch books={this.props.books}/>
          
           <h1> Book List </h1>
-           <Link to='/'> Home </Link> <br/>
-           <Link to='/addbook'> Add Book </Link>
 
             <div>
               

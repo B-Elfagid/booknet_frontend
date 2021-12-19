@@ -1,6 +1,6 @@
 
 export const incrementLikes = (likes, book_id) => {
-
+  
     return(dispatch) => {
       fetch(`http://localhost:8080/books/${book_id}`, {
         method: "PATCH",
@@ -13,7 +13,7 @@ export const incrementLikes = (likes, book_id) => {
       }})
    })
    .then(r => r.json())
-   .then(likes => dispatch({type: "INCREMENT_LIKES", payload: likes}))
+   .then(book => { dispatch ({ type: "INCREMENT_BOOKLIKES", payload: book})})
 }
 }
 

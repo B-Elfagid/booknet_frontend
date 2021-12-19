@@ -2,21 +2,26 @@
     return(dispatch) => {
       fetch(`http://localhost:8080/books/${book_id}/reviews`)
       .then(res => res.json())
-      // .then(json => {
+      .then(json => {
       //   debugger
-      //   console.log(json)
-      //   return json
-      // })
-      .then(reviews => dispatch({type: "SET_REVIEWS", payload: reviews}))
-      
+      console.log(json)
+      return json
+      })
+      .then(reviews => dispatch({type: "SET_REVIEWS", payload: reviews})
+      )
+      .then(review => console.log(review))
+       
     }
   }
 
 
   export const addReview = (action, comment) => {
+    
     const bookId = action.split("/")[4]
     const reviewData = {review:{comment:comment.comment, book_id:bookId}}
     return (dispatch) => {
+      dispatch({type: "PENDING_REVIEWS"});
+     
       fetch(`http://localhost:8080/books/${bookId}/reviews`, {
           method: "POST",
           headers: {
@@ -26,8 +31,10 @@
           body: JSON.stringify(reviewData)
        })
        .then(r => r.json())
-       .then(reviews => dispatch({type: "ADD_REVIEWS", payload: reviews}))
+       .then(reviews => {
+         dispatch({type: "ADD_REVIEW", payload: reviews})})
     }
+   
  }
 
 

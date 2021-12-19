@@ -35,7 +35,7 @@ font-size: 50px;
   .lnk-btn{
    font-size: 18px;
    text-decoration:none;
-   color:brown;
+   color: black;
    border:black 1px solid;
    padding:10px 20px;
    border-radius: 10px;
@@ -64,12 +64,11 @@ font-size: 50px;
 }
 
 .card{
-  box-shadow: 0 0 3px rgba(0, 0, 0.1);
-  width: 50%;
-  height:200px;
-  background:rgb(212, 231, 214);
-  margin: 20px;
-  font-size: 15px
+  text-align: center;
+  padding: 10px 20px;
+  width: 80%;
+  background-color: burlywood;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .bottom-card {
@@ -127,4 +126,24 @@ font-size: 50px;
 #image-input {
   font-size: 20px;
 
+}
+
+#like-button {
+  color: gray;
+  
+  font-family: 'Heebo', sans-serif;
+  background-color: transparent;
+  border: 0.1em solid;
+  border-radius: 1em;
+  padding: 0.333em 1em 0.25em;
+  line-height: 1.2em;
+  box-shadow: 0 0.25em 1em -0.25em;
+  cursor: pointer;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  outline: 0;
+}
+
+#like-button, a:hover{
+  color: brown;
+  font-weight: 900;
 }

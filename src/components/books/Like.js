@@ -5,17 +5,23 @@ import { connect } from 'react-redux'
 import { incrementLikes } from '../../actions/likeAction';
 
 function Like(props) {
+
+  const clicked = false;
+  
   const handleClick = () => {
-   
-   props.dispatchIncrementLikes(props.likes, props.book_id)
+    if(clicked) {
+      props.dispatchIncrementLikes(props.likes, props.book_id)
+        alert("you have sucesfully liked the book")
+    }else{
+        alert("YOU CAN ONLY PRESS LIKE BUTTON ONCE!")
+    }
   };
   
     return(
     <div>  
-      {/* {props.books.likes} */}
-      <button onClick={handleClick}> &hearts;</button>   
-        {/* <p>{props.state.likes} Likes</p> */}
-       <p>{props.likes ? props.likes : 0} {props.likes === 1 ? `Like` : `Likes`}</p>
+       <button type="button" id="like-button" onClick={handleClick}>
+       &hearts; <p>{props.likes ? props.likes : 0} {props.likes === 1 ? `Like` : `Likes`}</p>
+       </button>
      </div>
     )
   }

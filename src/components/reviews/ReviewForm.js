@@ -3,6 +3,8 @@ import { addReview } from '../../actions/reviewsAction.js'
 import { connect } from 'react-redux'
 
 class ReviewForm extends React.Component {
+
+    
    state = {
        comment: ""
    }

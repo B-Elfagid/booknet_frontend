@@ -15,14 +15,13 @@ class BookList extends React.Component {
 
  render(){
   return(
-      <div>
+      <div className="page-container">
         
          <BookSearch books={this.props.books}/>
          
-          <h1> Book List </h1>
+          <h3 className="book-header"> Book list </h3>
 
-            <div>
-              
+            <div className="container">
                {this.props.books.books.map(book => <BooksCard key={book.id} book={book} />)}
           </div>
   

@@ -13,15 +13,14 @@ class ReviewsList extends React.Component {
      render(){
          console.log(this.props)
          
-        return(
-            <div>
-                 <ReviewForm />
-                 
-                <h1>Comments</h1>
-                <ul>
-                {this.props.reviews.reviews.map(rev => <li key={rev.id}>{rev.comment}</li>)}
+        return( 
+             <div className="comment-container">
+               <ul className="commet-list"> 
+               
+                {this.props.reviews.reviews.map(rev => <li key={rev.id}>★{rev.comment}</li>)}
                 
                 </ul>
+                  <ReviewForm />
                 <div>
                    
                 </div>

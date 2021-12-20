@@ -26,8 +26,8 @@ class BookSearch extends React.Component {
       return(
       <div>
           <form>
-           <div>
-            <label>Search Book By Title</label>
+           <div className="search-input">
+            <label>Search Book</label>
             <input type="text" placeholder="Search Book" onChange={e => this.handleOnChange(e)} />
             </div>
 

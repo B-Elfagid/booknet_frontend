@@ -12,7 +12,7 @@ import Like from './Like';
     }
     
     return (
-        <div className="container">
+        <div className="BookList-container">
             <div className="card"> 
             <img src={props.book.image} alt="..." /><br/>
             {props.book.title} <br/>

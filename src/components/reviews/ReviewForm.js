@@ -27,9 +27,9 @@ class ReviewForm extends React.Component {
    render(){
        return(
            <div>
-               <form onSubmit={this.handleSubmit}>
+               <form className="review-form" onSubmit={this.handleSubmit}>
                <label htmlFor="comment-input">Comment:</label>
-                <input onChange={this.handleChange} name="comment" id="comment-input" type="textarea" value={this.state.comment}/><br/>
+                <textarea onChange={this.handleChange} name="comment" id="comment-input" type="text" value={this.state.comment}/><br/>
                 <button type="submit">Submit</button>
                </form>
            </div>

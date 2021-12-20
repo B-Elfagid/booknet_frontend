@@ -47,17 +47,11 @@ font-size: 50px;
     color:black;
   }
   
-
-
-
-
-
 .container {
     margin: 0 auto;
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(auto-fi11, minmax(225px, 1fr));
- 
     gap: 20px;
     font-family: sans-serif; 
    
@@ -71,34 +65,53 @@ font-size: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.card img {
+  width: 300px;
+  height: 400px;
+  
+}
+
 .bottom-card {
   padding: 5px;
   display: flex;
   justify-content: space-between ;
-  background: white;
+  background: blanchedalmond;
   font-size: 0.8em;
   border-bottom: 2px solid #cccccc;
 }
 
 
 .book-container {
+  background-image:url('./image/pic3.jpeg');
+  background-size: cover;
+  position: absolute;
+  top: 80px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  
+}
+
+.book-form {
   position: absolute;
   top:30%;
   left:50%;
   transform: translate(-40%, -40%);
   width: 300px;
-}
-
-.book-form {
   font-size: 20px;
   text-align: center;
   margin: 40px 0;
-  background-color: #838e23;
+  background-color: burlywood;
 }
 
 .book-container h3 {
   font-size: 50px;
   margin:15px 0;
+  text-align: center;
+  color: white;
   
 }
 
@@ -120,7 +133,7 @@ font-size: 50px;
 
 
 .book-form button:hover {
-  color:whitesmoke;
+  color: brown;
 }
 
 #image-input {
@@ -144,6 +157,61 @@ font-size: 50px;
 }
 
 #like-button, a:hover{
-  color: brown;
+  color:brown;
   font-weight: 900;
+}
+
+.page-container {
+
+  background-image:url('./image/img8.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+.search-input{
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  color: white;
+}
+
+.book-header{
+  text-align: center;
+  font-style: italic;
+  color: white;
+}
+
+.link-success{
+  background-color: burlywood;
+  color: brown;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 0.1em solid;
+  border-radius: 1em;
+  line-height: 1.2em;
+  box-shadow: 0 0.25em 1em -0.25em
+}
+
+.review-form{
+  display: flex;
+  align-items: center;
+  margin: 100px 0px 0px 0;
+  padding: 40px;
+  background-color: peru;
+  border: 1px solid #ddd;
+  flex-direction: column;
+
+}
+
+
+.commet-list{
+  text-align: justify;
+  margin: 20px 40%;
+  width: 30em;
 }

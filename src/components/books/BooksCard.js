@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 import Like from './Like';
 
 
- function BookCard(props) {
+
+ const BookCard = (props) => {
 
     function handleDelete() {
       props.dispatchdeleteBook(props.book.id)
@@ -16,8 +17,7 @@ import Like from './Like';
             <div className="card"> 
             <img src={props.book.image} alt="..." /><br/>
             {props.book.title} <br/>
-            {props.book.author} <br/>
-            {props.book.category} <br/>
+            By:{props.book.author} <br/>
             {props.book.description}<br/>
           
           

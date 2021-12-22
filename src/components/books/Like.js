@@ -6,16 +6,13 @@ import { incrementLikes } from '../../actions/likeAction';
 
 function Like(props) {
 
-  const clicked = false;
   
   const handleClick = () => {
-    if(clicked) {
       props.dispatchIncrementLikes(props.likes, props.book_id)
         alert("you have sucesfully liked the book")
-    }else{
-        alert("YOU CAN ONLY PRESS LIKE BUTTON ONCE!")
+    
     }
-  };
+  
   
     return(
     <div>  

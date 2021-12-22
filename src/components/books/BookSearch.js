@@ -15,9 +15,11 @@ class BookSearch extends React.Component {
         searchBooks: filteredBooks
       })
     } else {
+      console.log(this.state)
       this.setState({
         searchBooks: []
       })
+      console.log(this.state)
     }
   }
 

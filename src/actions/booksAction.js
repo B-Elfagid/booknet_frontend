@@ -19,7 +19,11 @@ export const addBook = (book) => {
          body: JSON.stringify(book)
       })
       .then(r => r.json())
-      .then(book => dispatch({type: "ADD_BOOK", payload: book}))
+      .then(book => { 
+            
+         dispatch({type: "ADD_BOOK", payload: book})
+        })
+      
    }
 }
 

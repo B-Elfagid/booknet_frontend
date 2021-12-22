@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
 import { addBook } from '../../actions/booksAction.js'
 import { connect } from 'react-redux'
 
@@ -12,12 +10,11 @@ class BookForm extends React.Component {
            author:"",
            description:"",
            image:"",
-           category:""
-           
+           category:""       
            
        }
 
-       handleChange = (e) => {
+      handleChange = (e) => {
         this.setState({
            [e.target.name] : e.target.value
         })
@@ -25,14 +22,13 @@ class BookForm extends React.Component {
 
       handleSubmit = (e) => {
         e.preventDefault()
-        this.props.dispatchAddBook(this.state)
-
-        this.setState({
-            title:"",
-            author:"",
-            description:"",
-            image:"",
-        })
+          this.props.dispatchAddBook(this.state)
+            this.setState({
+               title:"",
+               author:"",
+               description:"",
+               image:"",
+         })
       }
 
     render(){
@@ -50,14 +46,7 @@ class BookForm extends React.Component {
                       <input name="description" id="description-input" type="textarea" value={this.state.description} onChange={this.handleChange} /><br/>
                       <label htmlFor="image-input">Image-Url:</label>
                       <input name="image" id="image-input" type="text" value={this.state.image} onChange={this.handleChange} /> <br/>
-
-
-                      
-
                      <button type="submit">Submit</button>
-                   
-
-          
 
                 </form>
 
